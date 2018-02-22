@@ -1,3 +1,5 @@
+// Author: Mustafa Nasafi
+
 #include<iostream>
 #include<string>
 using namespace std;
@@ -8,12 +10,21 @@ int main()
   int numItems = 0;
   char input;
 
-  cout<<"\n==GROCERY LIST MANAGER==";
-  cout<<"\nEnter your choice: ";
-  cout<<"\n (A)dd an item";
-  cout<<"\n (Q)uit";
-  cout<<"\nYour choice (A/Q): ";
-  cin>>input;
+
+  do
+  {
+
+    cout<<"\n==GROCERY LIST MANAGER==";
+    cout<<"\nEnter your choice: ";
+    cout<<"\n (A)dd an item";
+    cout<<"\n (Q)uit";
+    cout<<"\nYour choice (A/Q): ";
+    cin>>input;
+
+  }while( input !='q' && input !='Q'); // q or Q terminates the loop
+  
+
+
 
   return 0;
 }
