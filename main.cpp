@@ -21,10 +21,19 @@ int main()
     cout<<"\nYour choice (A/Q): ";
     cin>>input;
 
+    if(input =='a' || input =='A')
+    {
+     
+     // output to ask name of the item to be added to the list
+      cout<<"What is the item?"<<endl;
+
+    // add new item to the list
+    // cin>> how I append new item to list[]?
+
+    }
+
   }while( input !='q' && input !='Q'); // q or Q terminates the loop
-  
-
-
+ 
 
   return 0;
 }
