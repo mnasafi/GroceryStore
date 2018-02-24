@@ -9,6 +9,7 @@ int main()
     string list[5]; //array of 5 strings
     int numItems = 0;
     char input;
+    string inputString;
 
 
     do
@@ -21,7 +22,7 @@ int main()
         cout<<"\nYour choice (A/Q): ";
         cin>>input;
 
-        if(input =='a' || input =='A')
+        if( (input =='a' || input =='A') && numItems < 5 )
         {
 
             // output to ask name of the item to be added to the list
@@ -30,14 +31,17 @@ int main()
             // add new item to the list
             // cin>> how I append new item to list[]?
 
+            cin >> inputString;
+            list[numItems] = inputString;
 
+            numItems++;
 
 
             // increment numItems after appending new item
 
         } // end if
 
-        else if(numItems < 5) // check if grocery list[] full
+       /* else if(numItems < 5) // check if grocery list[] full
         {
             // increment numItems after appending new item to list
             numItems++;                            
@@ -48,6 +52,7 @@ int main()
         {
 
         }
+        */
 
         else
         {
@@ -56,7 +61,7 @@ int main()
         }
        
     // end do
-    }while( ( input !='q' && input !='Q') && numItems < 5); // q or Q terminates the loop and if numItems > 5
+    }while ( input !='q' && input !='Q'); // q or Q terminates the loop and if numItems > 5
 
 
     return 0;
