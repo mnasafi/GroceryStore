@@ -33,7 +33,7 @@ int main()
             if ( numItems < 5 )
             {
 
-              cout << "Whats is the item?" << endl;
+              cout << "What is the item?" << endl;
               
               // add new item to the list[]
               cin >> inputString;
