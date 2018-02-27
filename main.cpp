@@ -6,7 +6,9 @@ using namespace std;
 
 int main()
 {
-    string list[5]; //array of 5 strings
+    const int LIST_SIZE = 5;
+    
+    string list[ LIST_SIZE ]; //array of 5 strings
     int numItems = 0;
     char input;
     string inputString;
@@ -22,47 +24,50 @@ int main()
         cout<<"\nYour choice (A/Q): ";
         cin>>input;
 
-        if( (input =='a' || input =='A') && numItems < 5 )
+        
+              
+        
+        if( input =='a' || input =='A') 
         {
 
-            // output to ask name of the item to be added to the list
-            cout<<"What is the item?"<<endl;
+            if ( numItems < 5 )
+            {
 
-            // add new item to the list
-            // cin>> how I append new item to list[]?
+              cout << "Whats is the item?" << endl;
+              
+              // add new item to the list[]
+              cin >> inputString;
+              list[numItems] = inputString;
 
-            cin >> inputString;
-            list[numItems] = inputString;
+              numItems++;  
 
-            numItems++;
+            } //end if
+
+            else 
+            {
+               cout << "You'll need a bigger list!" << endl;
+    
+            } //end else
 
 
-            // increment numItems after appending new item
+        } //end if
 
-        } // end if
 
-       /* else if(numItems < 5) // check if grocery list[] full
-        {
-            // increment numItems after appending new item to list
-            numItems++;                            
-
-        } // end else if
-
-        else if( !(numItems > 5) )
-        {
-
-        }
-        */
-
-        else
-        {
-            cout<<"You'll need a bigger list!"<<endl;
-
-        }
        
     // end do
-    }while ( input !='q' && input !='Q'); // q or Q terminates the loop and if numItems > 5
+    }while ( input !='q' && input !='Q'); // q or Q terminates the loop 
+
+    
+    cout << "==ITEMS TO BUY==" << endl;
+
+    // for loop to output the grocery list
+    for( int index = 0; index < LIST_SIZE; index++)
+    {
+        cout << index + 1 << " " << list[index] << endl;
+       
+    }
 
 
     return 0;
-}
+
+} // end prog
