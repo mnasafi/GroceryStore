@@ -9,7 +9,7 @@ int main()
     const int LIST_SIZE = 5;
     
     string list[ LIST_SIZE ]; //array of 5 strings
-    int numItems = 0;
+    int numItems = 0; // counter for list array index
     char input;
     string inputString;
 
@@ -29,23 +29,28 @@ int main()
         
         if( input =='a' || input =='A') 
         {
+            
 
-            if ( numItems < 5 )
+          // prompt user for the item
+          cout << "What is the item?" << endl;
+
+          // add new to the list[]
+          cin >> inputString;
+
+            if ( numItems < 5 ) // check if list is full, it not full store cin to list[]
             {
-
-              cout << "What is the item?" << endl;
-              
-              // add new item to the list[]
-              cin >> inputString;
+              //store user input cin to list[];  
               list[numItems] = inputString;
-
+              
+              // increment
               numItems++;  
 
             } //end if
 
             else 
             {
-               cout << "You'll need a bigger list!" << endl;
+              // print if list is full already
+              cout << "You'll need a bigger list!" << endl;
     
             } //end else
 
@@ -57,7 +62,7 @@ int main()
     // end do
     }while ( input !='q' && input !='Q'); // q or Q terminates the loop 
 
-    
+    // outputs stored grocery list
     cout << "==ITEMS TO BUY==" << endl;
 
     // for loop to output the grocery list
