@@ -1,18 +1,23 @@
 // Author: Mustafa Nasafi
+// Dynamic Grocery List
 
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
+#include <vector>
+
 using namespace std;
 
 int main()
 {
-    const int LIST_SIZE = 5;
     
-    string list[ LIST_SIZE ]; //array of 5 strings
-    int numItems = 0; // counter for list array index
-    char input;
+    char inputChar;
     string inputString;
 
+    int numItems;
+    
+    vector <string> items;
+    // items.push_back(int value);
+    // items.pop_back();
 
     do
     {
@@ -22,53 +27,31 @@ int main()
         cout<<"\n (A)dd an item";
         cout<<"\n (Q)uit";
         cout<<"\nYour choice (A/Q): ";
-        cin>>input;
+        cin >> inputChar;
 
-        
-              
-        
-        if( input =='a' || input =='A') 
+
+        if( inputChar =='a' || inputChar =='A') 
         {
             
-
           // prompt user for the item
           cout << "What is the item?" << endl;
 
-          // add new to the list[]
+          // add new input to item vector
           cin >> inputString;
-
-            if ( numItems < 5 ) // check if list is full, it not full store cin to list[]
-            {
-              //store user input cin to list[];  
-              list[numItems] = inputString;
-              
-              // increment
-              numItems++;  
-
-            } //end if
-
-            else 
-            {
-              // print if list is full already
-              cout << "You'll need a bigger list!" << endl;
-    
-            } //end else
-
+          items.push_back( inputString );
 
         } //end if
 
-
-       
     // end do
-    }while ( input !='q' && input !='Q'); // q or Q terminates the loop 
+    }while ( inputChar !='q' && inputChar !='Q'); // q or Q terminates the loop 
 
     // outputs stored grocery list
     cout << "==ITEMS TO BUY==" << endl;
 
     // for loop to output the grocery list
-    for( int index = 0; index < LIST_SIZE; index++)
+    for( int index = 0; index < items.size(); index++)
     {
-        cout << index + 1 << " " << list[index] << endl;
+        cout << index + 1 << " " << items[index] << endl;
        
     }
 
