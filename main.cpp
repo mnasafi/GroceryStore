@@ -40,10 +40,20 @@ int main()
           cin >> inputString;
           items.push_back( inputString );
 
-        } //end if
+        } // end if
 
     // end do
     }while ( inputChar !='q' && inputChar !='Q'); // q or Q terminates the loop 
+
+
+    if ( items.size() == 0 ) // checking if items vector is empty -- quitting without entry
+    {
+      cout << "No items to buy!" << endl;
+
+    } // end if 
+    
+    else 
+    {
 
     // outputs stored grocery list
     cout << "==ITEMS TO BUY==" << endl;
@@ -53,8 +63,9 @@ int main()
     {
         cout << index + 1 << " " << items[index] << endl;
        
-    }
-
+    } // end for
+    
+    } // end else
 
     return 0;
 
